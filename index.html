@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body
+    class="min-h-screen bg-greenLight font-karla text-greyDark flex items-center justify-center px-4 py-10"
+  >
+    <main class="w-full max-w-3xl space-y-4">
+      <div
+        id="successToast"
+        class="hidden flex items-center gap-3 rounded-xl bg-greyDark text-white px-4 py-3 shadow-lg w-fit mx-auto"
+        role="status"
+        aria-live="polite"
+      >
+        <img
+          src="./assets/images/icon-success-check.svg"
+          alt=""
+          class="h-5 w-5"
+          aria-hidden="true"
+        />
+        <div>
+          <p class="font-bold leading-tight">Message Sent!</p>
+          <p class="text-sm leading-tight">
+            Thanks for completing the form. We'll be in touch soon!
+          </p>
+        </div>
+      </div>
+
+      <form
+        id="contactForm"
+        class="bg-white rounded-2xl p-8 shadow-[0_12px_30px_rgba(25,60,71,0.12)] space-y-6"
+        novalidate
+      >
+        <h1 class="text-3xl font-bold">Contact Us</h1>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label for="firstName" class="block text-sm font-semibold"
+              >First Name
+              <span aria-hidden="true" class="text-greenDark">*</span></label
+            >
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              autocomplete="given-name"
+              required
+              class="field-input w-full rounded-lg border-[0.75px] border-greyMid bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-greenDark focus:border-greenDark placeholder:text-greyMid transition"
+              aria-required="true"
+              aria-describedby="firstNameError"
+            />
+            <p
+              id="firstNameError"
+              class="field-error text-redPrimary text-sm mt-1 hidden"
+              aria-live="polite"
+            >
+              This field is required
+            </p>
+          </div>
+          <div class="space-y-2">
+            <label for="lastName" class="block text-sm font-semibold"
+              >Last Name
+              <span aria-hidden="true" class="text-greenDark">*</span></label
+            >
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              autocomplete="family-name"
+              required
+              class="field-input w-full rounded-lg border-[0.75px] border-greyMid bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-greenDark focus:border-greenDark placeholder:text-greyMid transition"
+              aria-required="true"
+              aria-describedby="lastNameError"
+            />
+            <p
+              id="lastNameError"
+              class="field-error text-redPrimary text-sm mt-1 hidden"
+              aria-live="polite"
+            >
+              This field is required
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label for="email" class="block text-sm font-semibold"
+            >Email Address
+            <span aria-hidden="true" class="text-greenDark">*</span></label
+          >
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="email@example.com"
+            class="field-input w-full rounded-lg border-[0.75px] border-greyMid bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-greenDark focus:border-greenDark placeholder:text-greyMid transition"
+            aria-required="true"
+            aria-describedby="emailError"
+          />
+          <p
+            id="emailError"
+            class="field-error text-redPrimary text-sm mt-1 hidden"
+            aria-live="polite"
+          >
+            Please enter a valid email address
+          </p>
+        </div>
+
+        <fieldset class="space-y-3">
+          <legend class="text-sm font-semibold">
+            Query Type <span aria-hidden="true" class="text-greenDark">*</span>
+          </legend>
+          <div class="grid md:grid-cols-2 gap-3">
+            <label class="block">
+              <input
+                type="radio"
+                name="queryType"
+                value="General Enquiry"
+                required
+                class="peer sr-only"
+                aria-describedby="queryTypeError"
+              />
+              <span
+                class="radio-visual flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 peer-checked:border-2 peer-checked:border-greenDark peer-checked:bg-greenLight peer-checked:text-greyDark peer-focus-visible:ring-2 peer-focus-visible:ring-greenDark peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-white"
+              >
+                <span
+                  class="inline-flex items-center justify-center h-5 w-5 rounded-full border border-greyMid bg-white transition peer-checked:border-greenDark"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="h-2.5 w-2.5 rounded-full bg-greenDark transition transform scale-0 peer-checked:scale-100"
+                  ></span>
+                </span>
+                <span>General Enquiry</span>
+              </span>
+            </label>
+            <label class="block">
+              <input
+                type="radio"
+                name="queryType"
+                value="Support Request"
+                required
+                class="peer sr-only"
+                aria-describedby="queryTypeError"
+              />
+              <span
+                class="radio-visual flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 peer-checked:border-2 peer-checked:border-greenDark peer-checked:bg-greenLight peer-checked:text-greyDark peer-focus-visible:ring-2 peer-focus-visible:ring-greenDark peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-white"
+              >
+                <span
+                  class="inline-flex items-center justify-center h-5 w-5 rounded-full border border-greyMid bg-white transition peer-checked:border-greenDark"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="h-2.5 w-2.5 rounded-full bg-greenDark transition transform scale-0 peer-checked:scale-100"
+                  ></span>
+                </span>
+                <span>Support Request</span>
+              </span>
+            </label>
+          </div>
+          <p
+            id="queryTypeError"
+            class="field-error text-redPrimary text-sm mt-1 hidden"
+            aria-live="polite"
+          >
+            Please select a query type
+          </p>
+        </fieldset>
+
+        <div class="space-y-2">
+          <label for="message" class="block text-sm font-semibold"
+            >Message
+            <span aria-hidden="true" class="text-greenDark">*</span></label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            required
+            class="field-input w-full rounded-lg border-[0.75px] border-greyMid bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-greenDark focus:border-greenDark placeholder:text-greyMid transition resize-none"
+            aria-required="true"
+            aria-describedby="messageError"
+          ></textarea>
+          <p
+            id="messageError"
+            class="field-error text-redPrimary text-sm mt-1 hidden"
+            aria-live="polite"
+          >
+            This field is required
+          </p>
+        </div>
+
+        <div class="space-y-2">
+          <label class="flex items-start gap-3 text-sm font-semibold">
+            <input
+              id="consent"
+              name="consent"
+              type="checkbox"
+              required
+              class="mt-1 h-5 w-5 rounded border-greyMid text-greenDark accent-greenDark focus:ring-2 focus:ring-greenDark"
+              aria-describedby="consentError"
+              aria-required="true"
+            />
+            <span
+              >I consent to being contacted by the team
+              <span aria-hidden="true" class="text-greenDark">*</span></span
+            >
+          </label>
+          <p
+            id="consentError"
+            class="field-error text-redPrimary text-sm mt-1 hidden"
+            aria-live="polite"
+          >
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-greenDark text-white py-3 rounded-lg font-semibold hover:bg-greenDark/90 focus:outline-none focus:ring-4 focus:ring-greenLight focus:ring-offset-2 focus:ring-offset-white transition"
+        >
+          Submit
+        </button>
+      </form>
+    </main>
+
+    <script defer src="./src/main.js"></script>
+  </body>
+</html>
