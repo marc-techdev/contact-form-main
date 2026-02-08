@@ -128,51 +128,60 @@
             Query Type <span aria-hidden="true" class="text-greenDark">*</span>
           </legend>
           <div class="grid md:grid-cols-2 gap-3">
-            <label class="block">
-              <input
-                type="radio"
-                name="queryType"
-                value="General Enquiry"
-                required
-                class="peer sr-only"
-                aria-describedby="queryTypeError"
-              />
-              <span
-                class="radio-visual flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 peer-checked:border-2 peer-checked:border-greenDark peer-checked:bg-greenLight peer-checked:text-greyDark peer-focus-visible:ring-2 peer-focus-visible:ring-greenDark peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-white"
+            <!-- Option 1: General Enquiry -->
+            <label class="group cursor-pointer">
+              <div
+                class="flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 has-[:checked]:border-greenDark has-[:checked]:bg-greenLight has-[:checked]:text-greyDark group-focus-within:ring-2 group-focus-within:ring-greenDark group-focus-within:ring-offset-2 group-focus-within:ring-offset-white"
               >
-                <span
-                  class="inline-flex items-center justify-center h-5 w-5 rounded-full border border-greyMid bg-white transition peer-checked:border-greenDark"
-                  aria-hidden="true"
+                <input
+                  type="radio"
+                  name="queryType"
+                  value="General Enquiry"
+                  required
+                  class="sr-only"
+                  aria-describedby="queryTypeError"
+                />
+
+                <!-- Custom Radio Circle -->
+                <div
+                  class="flex items-center justify-center w-5 h-5 rounded-full border border-greyMid bg-white transition group-has-[:checked]:border-greenDark"
                 >
-                  <span
-                    class="h-2.5 w-2.5 rounded-full bg-greenDark transition transform scale-0 peer-checked:scale-100"
-                  ></span>
-                </span>
+                  <!-- Inner Dot -->
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-greenDark opacity-0 transition-opacity transform scale-0 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100"
+                  ></div>
+                </div>
+
                 <span>General Enquiry</span>
-              </span>
+              </div>
             </label>
-            <label class="block">
-              <input
-                type="radio"
-                name="queryType"
-                value="Support Request"
-                required
-                class="peer sr-only"
-                aria-describedby="queryTypeError"
-              />
-              <span
-                class="radio-visual flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 peer-checked:border-2 peer-checked:border-greenDark peer-checked:bg-greenLight peer-checked:text-greyDark peer-focus-visible:ring-2 peer-focus-visible:ring-greenDark peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-white"
+
+            <!-- Option 2: Support Request -->
+            <label class="group cursor-pointer">
+              <div
+                class="flex items-center gap-3 w-full border border-greyMid rounded-lg bg-white px-4 py-3 font-semibold transition hover:border-greenDark hover:bg-greenLight/80 has-[:checked]:border-greenDark has-[:checked]:bg-greenLight has-[:checked]:text-greyDark group-focus-within:ring-2 group-focus-within:ring-greenDark group-focus-within:ring-offset-2 group-focus-within:ring-offset-white"
               >
-                <span
-                  class="inline-flex items-center justify-center h-5 w-5 rounded-full border border-greyMid bg-white transition peer-checked:border-greenDark"
-                  aria-hidden="true"
+                <input
+                  type="radio"
+                  name="queryType"
+                  value="Support Request"
+                  required
+                  class="sr-only"
+                  aria-describedby="queryTypeError"
+                />
+
+                <!-- Custom Radio Circle -->
+                <div
+                  class="flex items-center justify-center w-5 h-5 rounded-full border border-greyMid bg-white transition group-has-[:checked]:border-greenDark"
                 >
-                  <span
-                    class="h-2.5 w-2.5 rounded-full bg-greenDark transition transform scale-0 peer-checked:scale-100"
-                  ></span>
-                </span>
+                  <!-- Inner Dot -->
+                  <div
+                    class="w-2.5 h-2.5 rounded-full bg-greenDark opacity-0 transition-opacity transform scale-0 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100"
+                  ></div>
+                </div>
+
                 <span>Support Request</span>
-              </span>
+              </div>
             </label>
           </div>
           <p
